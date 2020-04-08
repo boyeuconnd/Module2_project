@@ -76,6 +76,7 @@ public class SpellNum {
             int unit = num%10;
             int tens = (num/10)%10;
             int hunds = num/100;
+            int ten_unit = num%100;
             switch (hunds){
                 case 0:
                     spell_num="";
@@ -110,6 +111,41 @@ public class SpellNum {
             }
 
             switch (tens){
+                case 1:
+                    switch (ten_unit){
+                        case 10:
+                            spell_num += " ten";
+                            break;
+                        case 11:
+                            spell_num += " eleven";
+                            break;
+                        case 12:
+                            spell_num += " twelve";
+                            break;
+                        case 13:
+                            spell_num += " thirteen";
+                            break;
+                        case 14:
+                            spell_num += " fourteen";
+                            break;
+                        case 15:
+                            spell_num += " fifteen";
+                            break;
+                        case 16:
+                            spell_num += " sixteen";
+                            break;
+                        case 17:
+                            spell_num += " seventeen";
+                            break;
+                        case 18:
+                            spell_num += " eighteen";
+                            break;
+                        case 19:
+                            spell_num += " nineteen";
+                            break;
+                    }
+                    break;
+
                 case 2:
                     spell_num += " twenty";
                     break;
@@ -140,7 +176,9 @@ public class SpellNum {
                     spell_num += "";
                     break;
                 case 1:
-                    spell_num += " one";
+                    if(tens != 1){
+                        spell_num += " one";
+                    }
                     break;
                 case 2:
                     spell_num += " two";
