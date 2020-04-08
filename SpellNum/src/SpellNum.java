@@ -171,43 +171,44 @@ public class SpellNum {
                     spell_num += " ninety";
                     break;
             }
-            switch (unit){
-                case 0:
-                    spell_num += "";
-                    break;
-                case 1:
-                    if(tens != 1){
+            if(tens != 1){
+                switch (unit){
+                    case 0:
+                        spell_num += "";
+                        break;
+                    case 1:
                         spell_num += " one";
-                    }
-                    break;
-                case 2:
-                    spell_num += " two";
-                    break;
-                case 3:
-                    spell_num += " three";
-                    break;
-                case 4:
-                    spell_num += " four";
-                    break;
-                case 5:
-                    spell_num += " five";
-                    break;
-                case 6:
-                    spell_num += " six";
-                    break;
-                case 7:
-                    spell_num += " seven";
-                    break;
-                case 8:
-                    spell_num += " eight";
-                    break;
-                case 9:
-                    spell_num += " nine";
-                    break;
-                case 10:
-                    spell_num += " ten";
-                    break;
+                        break;
+                    case 2:
+                        spell_num += " two";
+                        break;
+                    case 3:
+                        spell_num += " three";
+                        break;
+                    case 4:
+                        spell_num += " four";
+                        break;
+                    case 5:
+                        spell_num += " five";
+                        break;
+                    case 6:
+                        spell_num += " six";
+                        break;
+                    case 7:
+                        spell_num += " seven";
+                        break;
+                    case 8:
+                        spell_num += " eight";
+                        break;
+                    case 9:
+                        spell_num += " nine";
+                        break;
+                    case 10:
+                        spell_num += " ten";
+                        break;
+                }
             }
+
 
         }else {
             spell_num = "Out of ability";
