@@ -11,9 +11,10 @@ public class PrimeNum {
             int i = 2;
             boolean check = true;
             while (i<=Math.sqrt(number)){
-                if(number%i ==0)
+                if(number%i ==0){
                     check = false;
-                    break;
+                    break;}
+                else {i++;}
 
             }
             if(check)
