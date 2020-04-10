@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MinValue {
+public class MinValueByMethod {
     public static int find_min_value(int[] array){
         int minvalue = array[0];
         for(int i =0;i<array.length;i++){
