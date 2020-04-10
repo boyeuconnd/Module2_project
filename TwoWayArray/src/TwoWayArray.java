@@ -1,5 +1,4 @@
-import org.w3c.dom.ls.LSOutput;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TwoWayArray {
@@ -33,12 +32,6 @@ public class TwoWayArray {
                 myArray[i][j]=scn.nextInt();
             }
         }
-//                {
-//                {1,2,3,4,5},
-//                {6,7,8,9,10},
-//                {11,12,13,14,15},
-//                {16,17,18,19,20},
-//        };
         System.out.println("=====Your 2 ways Array=======");
         for(int i =0;i<myArray.length;i++){
             for(int j = 0;j<myArray[0].length;j++){
