@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TestArray {
+public class DeleteInArray {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int size = -1;
