@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class StringTest {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter any String: ");
+        String inputString = scn.nextLine();
+        System.out.println(inputString.length());
+        int stringSize = inputString.length();
+        System.out.println("The String u just type:");
+        for(int i=0;i<stringSize;i++){
+            System.out.printf("%s",inputString.charAt(i));
+        };
+        System.out.println();
+        System.out.print("Enter the Char u want to find and count: ");
+        String character = scn.nextLine();
+        char c = character.charAt(0);
+        int count =0;
+        for(int i=0;i<stringSize;i++){
+            if(c == inputString.charAt(i)){
+                count++;
+            }
+        }
+        if(count!=0){
+            System.out.printf("Have %d char in String.",count);
+        }else {
+            System.out.println("Have no char in String.");
+        }
+
+    }
+}
