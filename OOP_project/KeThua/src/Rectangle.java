@@ -6,13 +6,13 @@ public class Rectangle extends Shape {
     }
 
     public Rectangle(double width, double height) {
-        this.width = width;
-        this.height = height;
+        this.setWidth(width);
+        this.setHeight(height);
     }
 
     public Rectangle( double width, double height,String color, boolean isFilled) {
-        this.width = width;
-        this.height = height;
+        this.setWidth(width);
+        this.setHeight(height);
         setColor(color);
         setFilled(isFilled);
     }
