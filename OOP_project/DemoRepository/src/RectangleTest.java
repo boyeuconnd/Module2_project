@@ -1,12 +1,25 @@
 public class RectangleTest {
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle();
-        System.out.println(rectangle);
+        Rectangle[] rectangles = new Rectangle[3];
+        rectangles[0]=new Rectangle();
+        rectangles[1]=new Rectangle(5,10,"Red",true);
+        rectangles[2]=new Rectangle(100,300,"Black",false);
+        System.out.println("Before resize:");
+        for (Rectangle recg:rectangles
+             ) {
+            System.out.println(recg);
+        }
 
-        rectangle = new Rectangle(2.3, 5.8);
-        System.out.println(rectangle);
+        rectangles[0].resize(300);
+        rectangles[1].resize(200);
+        rectangles[2].resize(50);
 
-        rectangle = new Rectangle(2.5, 3.8, "orange", true);
-        System.out.println(rectangle);
+        System.out.println("After resize:");
+        for (Rectangle recg:rectangles
+        ) {
+            System.out.println(recg);
+        }
+
+
     }
 }
