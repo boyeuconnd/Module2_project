@@ -1,61 +1,100 @@
 public class TennisGame {
 
-    public static String getScore(String player1Name, String player2Name, int m_score1, int m_score2) {
-        String score = "";
-        int tempScore=0;
-        if (m_score1==m_score2)
-        {
-            switch (m_score1)
-            {
-                case 0:
-                    score = "Love-All";
-                    break;
-                case 1:
-                    score = "Fifteen-All";
-                    break;
-                case 2:
-                    score = "Thirty-All";
-                    break;
-                case 3:
-                    score = "Forty-All";
-                    break;
-                default:
-                    score = "Deuce";
-                    break;
 
-            }
-        }
-        else if (m_score1>=4 || m_score2>=4)
+    public static String getScore(String player1Name, String player2Name, int scorePlayer1, int scorePlayer2) {
+        String score ="";
+        if (scorePlayer1==scorePlayer2) //Draw Score case
         {
-            int minusResult = m_score1-m_score2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
+            score = drawScoreCall(scorePlayer1);
         }
-        else
+        else if (scorePlayer1>=4 || scorePlayer2>=4) //One of player get advantage
         {
-            for (int i=1; i<3; i++)
+            score = lateMatchResultCall(scorePlayer1, scorePlayer2);
+        }
+        else //Beginning match points
+        {
+            score = beginScoreCall(scorePlayer1, scorePlayer2);
+        }
+        return score;
+    }
+
+    public static String beginScoreCall(int scorePlayer1, int scorePlayer2) {
+        int tempScore;
+        String score="";
+
+        final int LOVE = 0;
+        final int FIFTEEN = 1;
+        final int THIRTY = 2;
+        final int FORTY = 3;
+        for (int point = 1; point<3; point++)
+        {
+            if (point== 1) tempScore = scorePlayer1;
+            else { score+="-"; tempScore = scorePlayer2;}
+
+            switch(tempScore)
             {
-                if (i==1) tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
+                case LOVE:
+                    score+="Love";
+                    break;
+                case FIFTEEN:
+                    score+="Fifteen";
+                    break;
+                case THIRTY:
+                    score+="Thirty";
+                    break;
+                case FORTY:
+                    score+="Forty";
+                    break;
             }
         }
         return score;
+    }
+
+    public static String lateMatchResultCall(int scorePlayer1, int scorePlayer2) {
+        String score;
+        final int PLAYER1_ADVANTAGE = 1;
+        final int PLAYER2_ADVANTAGE = -1;
+        final int PLAYER1_WIN = 2;
+        int scoreDifference = scorePlayer1-scorePlayer2;
+
+        if (scoreDifference == PLAYER1_ADVANTAGE) score ="Advantage player1";
+        else {
+
+            if (scoreDifference == PLAYER2_ADVANTAGE) score ="Advantage player2";
+            else {
+
+                if (scoreDifference>= PLAYER1_WIN) score = "Win for player1";
+                else score ="Win for player2";
+            }
+        }
+        return score;
+    }
+
+    public static String drawScoreCall(int playerScore) {
+        String drawResultCall;
+        final int LOVE = 0;
+        final int FIFTEEN = 1;
+        final int THIRTY = 2;
+        final int FORTY = 3;
+        switch (playerScore)
+        {
+            case LOVE:
+                drawResultCall = "Love-All";
+                break;
+            case FIFTEEN:
+                drawResultCall = "Fifteen-All";
+                break;
+            case THIRTY:
+                drawResultCall = "Thirty-All";
+                break;
+            case FORTY:
+                drawResultCall = "Forty-All";
+                break;
+            default:
+                drawResultCall = "Deuce";
+                break;
+
+        }
+        return drawResultCall;
     }
 }
