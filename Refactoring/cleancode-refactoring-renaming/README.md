@@ -1,1 +1,1 @@
-Simple Refactoring exercise used at [CodeGym](https://codegym.vn)
+Simple Refactoring exercise1 is solved by Dangpham - C0220I1
