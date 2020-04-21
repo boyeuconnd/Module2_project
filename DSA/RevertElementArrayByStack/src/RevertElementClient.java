@@ -15,19 +15,19 @@ public class RevertElementClient {
         Arrays.toString(revertdArray);
 
         Stack<String> myStringStack = new Stack<>();
-        String inputString = "I want to talk to you that i really, really love you.";
-        System.out.println("Origin sentence: "+inputString);
-        String[] splitedArray =inputString.split(" ");
-        for (String a:splitedArray) {
-            myStringStack.push(a);
-        }
-        String[] revertedString = new String[splitedArray.length];
-        System.out.print("New reverted sentence: ");
-        for(int i =0;i<revertedString.length;i++){
-            revertedString[i]=myStringStack.pop();
-            System.out.print(revertedString[i]+" ");
-        }
-        System.out.println("\n==================================================");
+//        String inputString = "I want to talk to you that i really, really love you.";
+//        System.out.println("Origin sentence: "+inputString);
+//        String[] splitedArray =inputString.split(" ");
+//        for (String a:splitedArray) {
+//            myStringStack.push(a);
+//        }
+//        String[] revertedString = new String[splitedArray.length];
+//        System.out.print("New reverted sentence: ");
+//        for(int i =0;i<revertedString.length;i++){
+//            revertedString[i]=myStringStack.pop();
+//            System.out.print(revertedString[i]+" ");
+//        }
+//        System.out.println("\n==================================================");
         String[] beforeMarriage = {
                 "Chàng: Cuối cùng thì ngày này đã đến! Anh đã chờ mong quá lâu!",
                 "Nàng: Anh có muốn em ra đi không?",
@@ -44,16 +44,17 @@ public class RevertElementClient {
                 "Chàng: ừ!",
                 "Nàng: Anh yêu!",
         };
+        System.out.println(beforeMarriage.length);
         System.out.println("=======Trước khi cưới=======");
         for (String b:beforeMarriage) {
             System.out.println(b);
             myStringStack.push(b);
         }
-        String[] afterMarriage = new String[splitedArray.length];
+        String[] afterMarriage = new String[beforeMarriage.length];
         System.out.println("=======Sau khi cưới=======");
-        for(int i =0;i<revertedString.length;i++){
-            revertedString[i]=myStringStack.pop();
-            System.out.println(revertedString[i]);
+        for(int i =0;i<beforeMarriage.length;i++){
+            afterMarriage[i]=myStringStack.pop();
+            System.out.println(afterMarriage[i]);
         }
     }
 }
