@@ -12,9 +12,9 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
 
     @Override
     public boolean insert(E e) {
-        if (root == null)
+        if (root == null) //Case 1: empty tree
             root = createNewNode(e); /*create a new root*/
-        else {
+        else { //Case2: non-empty tree
             /*locate the parent node*/
             TreeNode<E> parent = null;
             TreeNode<E> current = root;
@@ -39,6 +39,17 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
     }
     protected TreeNode<E> createNewNode(E e) {
         return new TreeNode<>(e);
+    }
+    public boolean find(E element){
+        TreeNode<E> current = root;
+        while (current!=null){
+            if(element.compareTo(current.element) <0){
+                current = current.left;
+            }else if(element.compareTo(current.element)>0){
+                current = current.right;
+            }else {return true;};
+        }
+        return false;
     }
 
     /**
