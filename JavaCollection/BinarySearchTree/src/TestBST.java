@@ -19,5 +19,9 @@ public class TestBST {
         System.out.println("Have 30 in tree?: "+tree.find(45));//expect true
         System.out.println("Have 30 in tree?: "+tree.find(33));//expect false
         System.out.println("Have 16 in tree?: "+tree.find(27));//expect false
+        System.out.println("Pre order soft:");
+        tree.preOrder();
+        System.out.println("Post order soft");
+        tree.portOrder();
     }
 }

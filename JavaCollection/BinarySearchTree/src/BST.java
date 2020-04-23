@@ -67,10 +67,25 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E>{
         inorder(root);
     }
 
+
     protected void inorder(TreeNode<E> root) {
         if (root == null) return;
         inorder(root.left);
         System.out.println(root.element + " ");
         inorder(root.right);
     }
+    protected void portOrder() {
+        if (root == null) return;
+        inorder(root.left);
+        inorder(root.right);
+        System.out.println(root.element + " ");
+    }
+    protected void preOrder() {
+        if (root == null) return;
+        System.out.println(root.element + " ");
+        inorder(root.left);
+        inorder(root.right);
+
+    }
+
 }
