@@ -17,6 +17,6 @@ public class Main extends BinarySearch{
         myArray.add(100);
         myArray.add(120);
         myArray.add(160);
-        System.out.println(BinarySearch(myArray,121));
+        System.out.println(BinarySearch(myArray,161));
     }
 }

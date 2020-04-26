@@ -8,14 +8,16 @@ public class BinarySearch {
         while (array.size()>=1){
             if(value==array.get(m)){
                 return true;
+
             }else if(value>array.get(m)){
                 int newSize = array.size()/2;
                 while (array.size()>newSize){array.remove(0);}
-                m/=2;
+                return BinarySearch(array,value);
+
             }else if(value<array.get(m)){
                 int newSize = array.size()/2;
                 while (array.size()>newSize){array.remove(array.size()-1);}
-                m/=2;
+                return BinarySearch(array,value);
             }
 
         }
