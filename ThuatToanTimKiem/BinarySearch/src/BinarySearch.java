@@ -9,12 +9,11 @@ public class BinarySearch {
                 return true;
 
             }else if(value>array.get(m)){
-//                while (array.size()>newSize){array.remove(0);}
+
                 return BinarySearch(array,value,m+1,last);
 
             }else if(value<array.get(m)){
-//                int newSize = array.size()/2;
-//                while (array.size()>newSize){array.remove(array.size()-1);}
+
                 return BinarySearch(array,value,first,m-1);
             }
 
