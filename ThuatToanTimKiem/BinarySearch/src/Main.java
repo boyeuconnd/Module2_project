@@ -17,6 +17,8 @@ public class Main extends BinarySearch{
         myArray.add(100);
         myArray.add(120);
         myArray.add(160);
-        System.out.println(BinarySearch(myArray,161));
+        final int FIRST_INDEX = 0;
+        int last_index = myArray.size()-1;
+        System.out.println(BinarySearch(myArray,160,FIRST_INDEX,last_index));
     }
 }
