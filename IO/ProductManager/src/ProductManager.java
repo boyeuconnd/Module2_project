@@ -48,6 +48,38 @@ public class ProductManager {
         }
 
     }
+    protected static boolean deleteProductByName(File list,String keyword){
+        String tempLine = "";
+        String[] splited;
+        final String TEXT_CUT = ",";
+        boolean result =false;
+        Queue<String> line = new LinkedList<>();
+        try{
+            BufferedReader buffRead = new BufferedReader(new FileReader(list));
+            while ((tempLine = buffRead.readLine())!= null){
+                splited = tempLine.split(TEXT_CUT);
+                if(splited[1].equalsIgnoreCase(keyword)){
+                    result = true;
+                    continue;
+                }else {
+                    line.add(tempLine);
+                }
+            }
+
+            buffRead.close();
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(list));
+            while (!line.isEmpty()){
+                buffWrite.write(line.poll()+"\n");
+            }
+            buffWrite.close();
+
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            return result;
+        }
+    }
     protected static void addProduct(File list,String code,String name,String brand,int price, String description){
         Queue<String> line = new LinkedList<>();
         String temp ="";
@@ -78,12 +110,15 @@ public class ProductManager {
                 throw new FileNotFoundException("File not found");
             }else {
                 showProductList(productList);
-                System.out.print("Enter search name: ");
-                String searchValue = scn.nextLine();
-                findProductByName(productList,searchValue);
-//                addProduct(productList,"007","Ertiga","Suzuki",20000,"MPV car 7 seats");
-//                System.out.println("after edit=======================");
-//                showProductList(productList);
+//                System.out.print("Enter search name: ");
+//                String searchValue = scn.nextLine();
+//                findProductByName(productList,searchValue);
+                addProduct(productList,"007","Ertiga","Suzuki",20000,"MPV car 7 seats");
+                System.out.println("after add=======================");
+                showProductList(productList);
+                deleteProductByName(productList,"Civic");
+                System.out.println("After delete==================");
+                showProductList(productList);
 
             }
 
