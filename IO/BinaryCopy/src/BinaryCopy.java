@@ -8,8 +8,8 @@ public class BinaryCopy {
         try (InputStream inputStr = new BufferedInputStream(new FileInputStream(source),BUFFER_SIZE);
               OutputStream outputStr = new BufferedOutputStream(new FileOutputStream(destination),BUFFER_SIZE))   {
             byte[] buffer = new byte[BUFFER_SIZE];
-            while (inputStr.read(buffer)!= -1){
-                outputStr.write(buffer);
+            while (inputStr.read(buffer)!= -1){ //Dòng input Stream đọc dòng byte từ file input stream với file path là source sau đó xuất ra mảng byte[] buffer
+                outputStr.write(buffer); //Viết ra theo dòng file output stream với file path là destination, nội dung là mảng byte[] buffer
             }
 
         }catch (IOException e){
