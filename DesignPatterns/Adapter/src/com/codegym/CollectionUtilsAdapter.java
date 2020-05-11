@@ -2,13 +2,19 @@ package com.codegym;
 
 import java.util.*;
 
-public class CollectionUtilsAdapter {
-    public CollectionUtilsAdapter() {
+public class CollectionUtilsAdapter implements CollectionAdapter {
 
+
+    @Override
+    public int findMax(Set<Integer> setArray) {
+        List<Integer> myList = setToListAdapter(setArray);
+        int max = new CollectionUtils().findMax(myList);
+        return max;
     }
 
 
-    public List<Integer> setToListAdapter (Set<Integer> setArray){
+
+    private List<Integer> setToListAdapter (Set<Integer> setArray){
         List<Integer> mylist = new ArrayList<>();
         if(setArray.isEmpty()){
             mylist = new ArrayList<>();

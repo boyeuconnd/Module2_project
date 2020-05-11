@@ -15,8 +15,8 @@ public class Main {
         mySet.add(199);
         mySet.add(6);
         CollectionUtilsAdapter adapter = new CollectionUtilsAdapter();
-        List myList = adapter.setToListAdapter(mySet);
-        int maxNumber = new CollectionUtils().findMax(myList);
+
+        int maxNumber = adapter.findMax(mySet);
         System.out.println("Max number of list: "+maxNumber);
     }
 }
